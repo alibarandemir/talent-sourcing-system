@@ -1,2 +1,5 @@
 client/node_modules
 server/node_modules
+
+client/src/input.css
+client/src/output.css

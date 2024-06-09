@@ -4,6 +4,7 @@
 
 <h2>Project Screenshots:</h2>
 <img src="https://hizliresim.com/1cqugls" width="300" />
+![Ekran görüntüsü 2024-06-09 025026](https://github.com/alibarandemir/talent-sourcing-system/assets/88498577/b317ac74-e020-4323-9cf3-327a92fad76d)
 
 
 

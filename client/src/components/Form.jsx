@@ -120,10 +120,12 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto my-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-1/3 mx-auto my-8">
+      {isEditingPage&&
       <div onClick={handleDelete} className='float-right relative bg-red-600 rounded p-3 text-center cursor-pointer'>
       <MdDelete className='text-white text-xl' />
-      </div>
+      </div>}
+      
       <div className="mb-4 ">
         <label className="block mb-2 text-xl text-main font-bold">Name</label>
         <input {...register('name')} disabled={isEditingPage?!isEdited:false} className="border border-gray-300 px-3 py-2 w-full rounded-md" />
@@ -161,6 +163,7 @@ function Form() {
       <div className="mb-4">
         <label className="block mb-1 text-xl font-bold text-main">Interactions</label>
         {fields.map((item, index) => (
+          
           <div key={item.id} className="mb-4 p-4 border border-gray-300 rounded-md">
             <div className="mb-2">
               <label className="block mb-1 text-xl font-bold text-main">Type</label>
@@ -190,10 +193,10 @@ function Form() {
               {errors.interactions?.[index]?.candidateResponded && <p className="text-red-500">{errors.interactions[index].candidateResponded.message}</p>}
             </div>
 
-            {isEdited && <button type="button" onClick={() => remove(index)} className="mt-2 bg-red-500 text-white px-4 py-2 rounded-md">Remove Interaction</button>}
+            <button type="button" onClick={() => remove(index)} className="mt-2 bg-red-500 text-white px-4 py-2 rounded-md">Remove Interaction</button>
           </div>
         ))}
-        {isEdited && <button type="button" onClick={() => append({ type: '', content: '', date: '', candidateResponded: false })} className="bg-secondary text-white px-4 py-2 rounded-md">Add Interaction</button>}
+         <button disabled={isEditingPage ? !isEdited:false} type="button" onClick={() => append({ type: '', content: '', date: '', candidateResponded: false })} className={`${isEdited?"bg-green-600":"bg-secondary"}  text-white px-4 py-2 rounded-md`}>Add Interaction</button>
       </div>
       
       <div className="flex justify-center items-center">

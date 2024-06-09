@@ -103,7 +103,7 @@ const CandidateList = () => {
   }
   const handleFilterChange = e => {
     const value = e.target.value || undefined;
-    setFilter("name", value); // Update the show.name filter. Now our table will filter and show only the rows which have a matching value
+    setFilter("name", value);
   setFilterInput(value);
     
   };

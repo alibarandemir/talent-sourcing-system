@@ -19,11 +19,6 @@ function App() {
           <Route path='/createCandidate' element={<CandidateCreate/>}></Route>
           <Route path='/detail/:id' element={<CandidateDetail/>}></Route>
           <Route path='/candidates' element={<Candidates/>}></Route>
-          
-
-
-
-
         </Routes>
 
         </Layout>

@@ -7,7 +7,7 @@ function CandidateCreate() {
     
     
       return (
-        <div>
+        <div className='min-h-screen flex flex-col'>
           <Form/>
        </div>
       );

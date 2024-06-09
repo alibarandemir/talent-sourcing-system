@@ -7,7 +7,7 @@ const formatDate = (isoString) => {
   };
 
 
-
+//reqden gelen iso tarih formatını yıl/ay/gün şeklinde string formatına çevirir
  const convertDate=(req,res,next)=>{
     console.log("ddf")
     console.log(req.body)
@@ -17,12 +17,7 @@ const formatDate = (isoString) => {
             console.log(isoDate)
             req.body.interactions[i].date=formatDate(isoDate);
             req.date= formatDate(isoDate)
-            
-            
         }
-        
-        
-    
     next();
 }
 module.exports= convertDate;

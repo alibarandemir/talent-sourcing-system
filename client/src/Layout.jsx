@@ -10,9 +10,7 @@ function Layout({ children }) {
   return (
     <div className='w-screen h-screen relative'>
       {location.pathname !== '/home' && (
-        
           <RedirectHome />
-        
       )}
       {children}
       <Footer/>

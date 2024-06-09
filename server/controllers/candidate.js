@@ -1,7 +1,5 @@
 const Candidate= require('../models/Candidate.js');
 
-
-
   const createCandidate= async (req,res)=>{
     try{
         const candidate= await  Candidate.findOne({"contactInformation.email":req.body.contactInformation.email});
@@ -12,10 +10,6 @@ const Candidate= require('../models/Candidate.js');
             return res.json({message:"This candidate already is created"})
         }
         const newCandidate= await Candidate.create(req.body);
-        
-        
-        
-        
         res.status(200).json({
             newCandidate:newCandidate,
             message:"New Candidate created successfully"
@@ -26,9 +20,7 @@ const Candidate= require('../models/Candidate.js');
             error:e.message
         })
     }
-
 }
-
 
 
  const getAllCandidates=async(req,res)=>{
@@ -60,12 +52,7 @@ const getCandidateDetail=async(req,res)=>{
 
  const editCandidate=async(req,res)=>{
     try {
-        
-        console.log(req.date)
-        console.log(req.body.interactions[0].date)
-        console.log(req.body)
         const candidate = await Candidate.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        
         if (!candidate) {
           return res.status(404).json({ error: 'Candidate not found' });
         }
